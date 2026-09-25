@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zareen Photo Studio</title>
+    <!-- Icons के लिए FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #e50914; /* लोगो का लाल रंग */
+            --bg-color: #f8f9fa;
+            --text-color: #333333;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .app-container {
+            width: 100%;
+            max-width: 480px; /* मोबाइल ऐप जैसा लुक */
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            min-height: 100vh;
+            padding-bottom: 30px;
+        }
+        /* Header & Logo */
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+        .header img {
+            width: 120px;
+            height: auto;
+            border-radius: 50%; /* लोगो को गोल दिखाने के लिए */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            font-size: 22px;
+            margin: 10px 0 5px;
+            color: #000;
+        }
+        .header p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+        /* New Item Announcement */
+        .announcement {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 12px 15px;
+            margin: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #ffc107;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .announcement i {
+            color: #ffc107;
+            font-size: 18px;
+        }
+        /* Action Buttons (Call, WhatsApp, Catalog) */
+        .actions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            padding: 15px;
+        }
+        .btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            transition: transform 0.2s;
+            text-align: center;
+        }
+        .btn:active { transform: scale(0.95); }
+        .btn i { font-size: 24px; margin-bottom: 8px; }
+        
+        .btn-catalog { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); grid-column: span 2; padding: 18px;}
+        .btn-whatsapp { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); }
+        .btn-call { background: linear-gradient(135deg, #00C6FF 0%, #0072FF 100%); }
+        
+        /* Photo Gallery */
+        .section-title {
+            padding: 0 15px;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #222;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 0 15px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        /* Google Reviews */
+        .google-reviews {
+            background: #fff;
+            margin: 20px 15px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid #eee;
+        }
+        .stars { color: #fbbc05; font-size: 20px; letter-spacing: 2px; margin-bottom: 5px; }
+        .google-logo { width: 70px; margin-bottom: 5px;}
+        /* Social Media */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+        }
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+        .yt { background: #FF0000; }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- 1. Header (Logo & Name) -->
+        <div class="header">
+            <img src="1000021900.png" alt="Zareen Photo Studio">
+            <h1>Zareen Photo Studio</h1>
+            <p>Premium Photography & Sublimation Printing</p>
+        </div>
+
+        <!-- 2. New Item / Announcement Section -->
+        <!-- यहाँ आप अपना नया आइटम लिख सकते हैं -->
+        <div class="announcement">
+            <i class="fas fa-bell"></i>
+            <div>
+                <strong>नया कलेक्शन:</strong> हमारे पास कस्टमाइज़्ड मैजिक मग और नई फोटो फ्रेम्स आ गई हैं! 
+            </div>
+        </div>
+
+        <!-- 3. Main Buttons -->
+        <div class="actions-grid">
+            <!-- कैटलॉग का लिंक (इसे आप बाद में बदल सकते हैं) -->
+            <a href="https://vyaparapp.in/store/ZAREENSUBLIMATIONPRINTING1" target="_blank" class="btn btn-catalog">
+                <i class="fas fa-store"></i>
+                हमारा पूरा कैटलॉग देखें
+            </a>
+
+            <!-- WhatsApp बटन (यहाँ 917900011228 डाला गया है) -->
+            <a href="https://wa.me/917900011228?text=Hello Zareen Photo Studio, I want to inquire about..." target="_blank" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                WhatsApp मैसेज
+            </a>
+
+            <!-- कॉलिंग बटन -->
+            <a href="tel:+917900011228" class="btn btn-call">
+                <i class="fas fa-phone-alt"></i>
+                डायरेक्ट कॉल करें
+            </a>
+        </div>
+
+        <!-- 4. Photo Gallery (यहाँ आप अपनी शूट की फोटो लगा सकते हैं) -->
+        <div class="section-title">
+            <span>नवीनतम शूट (Gallery)</span>
+        </div>
+        <div class="gallery">
+            <!-- फोटो 1 -->
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Shoot 1">
+            <!-- फोटो 2 -->
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Shoot 2">
+            <!-- फोटो 3 -->
+            <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Shoot 3">
+            <!-- फोटो 4 -->
+            <img src="https://images.unsplash.com/photo-1532712938736-59b9082f086b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Shoot 4">
+        </div>
+
+        <!-- 5. Google Business Rating -->
+        <div class="google-reviews">
+            <h3 style="margin:0; font-size:16px; color:#333;">Google Business</h3>
+            <div class="stars">★★★★★</div>
+            <p style="margin:5px 0 0; font-size:14px; font-weight:600;">4.9 / 5.0 Top Rated Studio</p>
+            <p style="margin:5px 0 0; font-size:12px; color:#666;">ग्राहकों की पहली पसंद</p>
+        </div>
+
+        <!-- 6. Social Media Links -->
+        <div class="social-links">
+            <a href="https://www.instagram.com/zareenphotostudio?stkn=MTNoNmhxN3F4ZzRqdQ==" target="_blank" class="social-btn ig">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://youtube.com/@zareenphotostudio9341?si=LlrL9HzhXaPml8cW" target="_blank" class="social-btn yt">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>
